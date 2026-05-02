@@ -1,12 +1,14 @@
 const { Pool } = require("pg");
 require("dotenv").config();
-const dns = require("dns");
-
-dns.setDefaultResultOrder("ipv4first");
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  host: "db.tvhywwmevtpsjipdxxrs.supabase.co",
+  port: 5432,
+  database: "postgres",
+  user: "postgres",
+  password: "Pacande1225.",
   ssl: { rejectUnauthorized: false },
+  family: 4,
 });
 
 pool.connect((err, client, release) => {
