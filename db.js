@@ -2,13 +2,8 @@ const { Pool } = require("pg");
 require("dotenv").config();
 
 const pool = new Pool({
-  host: "db.tvhywwmevtpsjipdxxrs.supabase.co",
-  port: 5432,
-  database: "postgres",
-  user: "postgres",
-  password: "Pacande1225.",
+  connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
-  family: 4,
 });
 
 pool.connect((err, client, release) => {
