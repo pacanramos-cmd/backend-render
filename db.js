@@ -1,5 +1,8 @@
 const { Pool } = require("pg");
 require("dotenv").config();
+const dns = require("dns");
+
+dns.setDefaultResultOrder("ipv4first");
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
